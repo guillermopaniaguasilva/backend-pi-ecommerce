@@ -1,0 +1,181 @@
+{
+  "info": {
+    "_postman_id": "26240e56-72e7-4ec1-a94a-807ce323462d",
+    "name": "E-commerce back-end API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "5473648"
+  },
+  "item": [
+    {
+      "name": "Fetch product by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/products/{{productId}}",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "products", "{{productId}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete product by id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"isAdmin\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/products/{{productId}}",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "products", "{{productId}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"isAdmin\": true,\n    \"name\": \"Bajo\",\n    \"description\": \"Excelente bajo\",\n    \"price\": 250000,\n    \"photo\": \"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/170.jpg\",\n    \"stock\": 10\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/products",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update product by id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"isAdmin\": true,\n    \"name\": \"Bajo\",\n    \"description\": \"Excelente bajo\",\n    \"price\": 150000,\n    \"photo\": \"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/170.jpg\",\n    \"stock\": 15\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/products/{{productId}}",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "products", "{{productId}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create cart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"products\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/cart",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "cart"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete cart",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/cart/{{cartId}}",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "cart", "{{cartId}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add products to cart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"products\": [\n        {\n            \"id\": 4,\n            \"timestamp\": 1660706459420,\n            \"name\": \"Bateria\",\n            \"description\": \"Kit Bateria\",\n            \"code\": \"r4t5y6\",\n            \"price\": 250000,\n            \"photo\": \"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/170.jpg\",\n            \"stock\": 10\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/cart/{{cartId}}/products",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "cart", "{{cartId}}", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Fetch products in cart",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/cart/{{cartId}}/products",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "cart", "{{cartId}}", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete product from cart",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{protocol}}://{{host}}/api/cart/{{cartId}}/products/{{productId}}",
+          "protocol": "{{protocol}}",
+          "host": ["{{host}}"],
+          "path": ["api", "cart", "{{cartId}}", "products", "{{productId}}"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
